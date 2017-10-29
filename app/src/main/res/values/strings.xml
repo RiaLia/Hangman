@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Hangman</string>
+    <string name="Play">Play</string>
+    <string name="About">About</string>
+    <string name="letterA">A</string>
+    <string name="letterB">B</string>
+    <string name="letterC">C</string>
+    <string name="letterD">D</string>
+    <string name="letterE">E</string>
+    <string name="letterF">F</string>
+    <string name="letterG">G</string>
+    <string name="letterH">H</string>
+    <string name="letterI">I</string>
+    <string name="letterJ">J</string>
+    <string name="letterK">K</string>
+    <string name="letterL">L</string>
+    <string name="letterM">M</string>
+    <string name="letterN">N</string>
+    <string name="letterO">O</string>
+    <string name="letterP">P</string>
+    <string name="letterQ">Q</string>
+    <string name="letterR">R</string>
+    <string name="letterS">S</string>
+    <string name="letterT">T</string>
+    <string name="letterU">U</string>
+    <string name="letterV">V</string>
+    <string name="letterW">W</string>
+    <string name="letterX">X</string>
+    <string name="letterY">Y</string>
+    <string name="letterZ">Z</string>
+
+    <string name="AboutText">
+    \n\n Hangman is a classic game, where the goal is to guess letters in an unknown word.
+    \n\n In this version you can choose if you want to play single game or multiplayer.
+    \n\n
+    \n\n
+    \n\nThe game is designed and developed by Ria Buhlin. 2017.
+    </string>
+    <string name="hint">ENTER YOUR NAME!</string>
+    <string name="category">CHOOSE A CATAGORY</string>
+    <string name="Random">Random</string>
+    <string name="Animals">Animals</string>
+    <string name="Countries">Countries</string>
+    <string name="Vehicles">Vehicles</string>
+    <string name="Encyklopedia">Encyklopedia</string>
+    <string name="food"><![CDATA[Food & Drinks]]></string>
+    <string name="Name">"NAME: "</string>
+</resources>

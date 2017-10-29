@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Random">
+        <item>ELEPHANT</item>
+        <item>PORKYPINE</item>
+        <item>GIRAFF</item>
+        <item>BEAVER</item>
+        <item>ANTEATER</item>
+        <item>CHIMPANZEE</item>
+        <item>HUMMINGBIRD</item>
+        <item>ENGLAND</item>
+        <item>AUSTRALIA</item>
+        <item>GERMANY</item>
+        <item>JAMACIA</item>
+        <item>KUWAIT</item>
+        <item>NORWAY</item>
+        <item>AFGHANISTAN</item>
+        <item>BOAT</item>
+        <item>MOTORCYCKLE</item>
+        <item>TRAIN</item>
+        <item>CATAMARAN</item>
+        <item>HELICOPTER</item>
+        <item>SUBMARINE</item>
+        <item>YACHT</item>
+        <item>DIAPHANOUS</item>
+        <item>EMBEZZLEMENT</item>
+        <item>ANACHRONISTIC</item>
+        <item>IMPECUNIOUS</item>
+        <item>MULTIFARIOUS</item>
+        <item>NEOPHYTE</item>
+        <item>OBSTREPEROUS</item>
+        <item>CANTALOUPE</item>
+        <item>CUCUMBER</item>
+        <item>CHAMPAGNE</item>
+        <item>WHISKEY</item>
+        <item>COFFEE</item>
+        <item>MEATLOAF</item>
+        <item>HAMBURGER</item>
+    </string-array>
+
+    <string-array name="Animal">
+        <item>ELEPHANT</item>
+        <item>PORKYPINE</item>
+        <item>GIRAFF</item>
+        <item>BEAVER</item>
+        <item>ANTEATER</item>
+        <item>CHIMPANZEE</item>
+        <item>HUMMINGBIRD</item>
+    </string-array>
+
+    <string-array name="Countries">
+        <item>ENGLAND</item>
+        <item>AUSTRALIA</item>
+        <item>GERMANY</item>
+        <item>JAMACIA</item>
+        <item>KUWAIT</item>
+        <item>NORWAY</item>
+        <item>AFGHANISTAN</item>
+    </string-array>
+    
+    <string-array name="Vehicles">
+        <item>BOAT</item>
+        <item>MOTORCYCKLE</item>
+        <item>TRAIN</item>
+        <item>CATAMARAN</item>
+        <item>HELICOPTER</item>
+        <item>SUBMARINE</item>
+        <item>YACHT</item>
+    </string-array>
+
+    <string-array name="Encyklopedia">
+        <item>DIAPHANOUS</item>
+        <item>EMBEZZLEMENT</item>
+        <item>ANACHRONISTIC</item>
+        <item>IMPECUNIOUS</item>
+        <item>MULTIFARIOUS</item>
+        <item>NEOPHYTE</item>
+        <item>OBSTREPEROUS</item>
+    </string-array>
+
+    <string-array name="Food">
+        <item>CANTALOUPE</item>
+        <item>CUCUMBER</item>
+        <item>CHAMPAGNE</item>
+        <item>WHISKEY</item>
+        <item>COFFEE</item>
+        <item>MEATLOAF</item>
+        <item>HAMBURGER</item>
+    </string-array>
+
+</resources>
