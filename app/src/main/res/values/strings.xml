@@ -31,8 +31,7 @@
 
     <string name="AboutText">
     \n\n Hangman is a classic game, where the goal is to guess letters in an unknown word.
-    \n\n In this version you can choose if you want to play single game or multiplayer.
-    \n\n
+    \n\n In this version you can choose a specific category, or play a random word.
     \n\n
     \n\nThe game is designed and developed by Ria Buhlin. 2017.
     </string>

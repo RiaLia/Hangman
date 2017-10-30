@@ -17,4 +17,50 @@
     </style>
 
 
+    <!--style name="AppTheme" parent= "Theme.AppCompat.Light.NoActionBar"
+       Och sen skapar man en ny action bar, toolbar.
+       Detta behöver göras för varje attivity som ska ha en actionBar.
+
+       <android.support.v7.widget.Toolbar
+            ......
+
+
+           i oncreate sedan
+           Toolbar myToolbar = (ToolBar) findviewById(R.id.my_toolbar);
+           setSupportActionBar(MyToolbar);
+
+
+           välj den med support.v7
+
+           ActionBar actionbar = getsupportActionBar();
+           actionbar.  // här ska man då kunna göra ändringar till toolBaren.
+
+
+
+           public boolean onCreateOptionsMenu(Menu menu){
+              getMenuInflater().inflate(R.menu.toolbar, menu);
+
+              return true; // Om den ska vara synlig! Annars false.
+             }
+
+           public boolean onOptionsItemSelected( Menu menu){
+                    if( item.getItemId() == R.id.app_bar_info){
+                    // Kod som säger vad som händer   return true;
+                    }
+                    else if (item.getItemId() == R.id.app_bar_search){
+                    // Kod       return true;
+                    }
+                    return super.onOptionsItemSelected(item);
+             }
+
+
+
+
+       -->
+
+
 </resources>
+
+
+
+

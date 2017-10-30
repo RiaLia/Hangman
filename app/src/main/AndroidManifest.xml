@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Start">
+        <activity android:name=".Start"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -20,10 +22,12 @@
             android:parentActivityName=".Start"
             android:screenOrientation="portrait" />
         <activity android:name=".About"
-            android:parentActivityName=".Start"/>
+            android:parentActivityName=".Start"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Category"
-            android:parentActivityName=".Start"/>
+            android:parentActivityName=".Start"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

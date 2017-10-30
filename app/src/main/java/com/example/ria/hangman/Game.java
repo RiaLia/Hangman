@@ -21,7 +21,6 @@ public class Game extends AppCompatActivity {
     private ImageView[] bodyParts;
     private int numParts = 6;
 
-    private TextView showLetter;
     private TextView showWord;
 
     private TextView textView;
@@ -34,19 +33,15 @@ public class Game extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String text = intent.getStringExtra("Message");
+        String name = intent.getStringExtra("Message");
         textView = (TextView)findViewById(R.id.namnText);
-        textView.setText(text);
+        textView.setText(name);
 
         String text2 = intent.getStringExtra("Key");
         textView2 = (TextView)findViewById(R.id.textView5);
         textView2.setText(text2);
 
-        String mysteryWord = intent.getStringExtra("Word");
-        currWord = mysteryWord;
-
-
-
+        currWord = intent.getStringExtra("Word");
 
         bodyParts = new ImageView[numParts];
         bodyParts[0] = (ImageView) findViewById(R.id.head);
@@ -56,7 +51,7 @@ public class Game extends AppCompatActivity {
         bodyParts[4] = (ImageView) findViewById(R.id.leg1);
         bodyParts[5] = (ImageView) findViewById(R.id.leg2);
 
-        showLetter = (TextView) findViewById(R.id.showLetter);
+
         showWord = (TextView) findViewById(R.id.showWord);
 
         asterisk = new char[currWord.length()];
@@ -71,7 +66,6 @@ public class Game extends AppCompatActivity {
         String guess = ((TextView)view).getText().toString();
         view.setEnabled(false);
         view.setBackgroundResource(R.drawable.letter_down);
-        showLetter.setText(guess);
         hang(guess);
     }
 
@@ -97,20 +91,23 @@ public class Game extends AppCompatActivity {
             if (! String.valueOf(asterisk).contains("*")){
 
                 final Intent intent = new Intent(this , Category.class);
+                final Intent intentStart = new Intent(this, Start.class);
                 AlertDialog.Builder winBuild = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AlertDialogCustom));
+
                 winBuild.setTitle("YOU WON!!!").setMessage("You correctly guessed the word in: " +count+ " tries!! ")
                 .setPositiveButton("Next Word", new DialogInterface.OnClickListener(){
                             public void onClick(DialogInterface dialog, int id){
                                 startActivity(intent);
                             }
-                        });
-                winBuild.setNegativeButton("Exit",
+                        })
+                .setNegativeButton("Exit",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                startActivity(intentStart);
                                 Game.this.finish();
-                                // Behöver backa bakåt ett steg till.
-                            }});
-                winBuild.show();
+                            }})
+                        .setCancelable(false)
+                .show();
             }
         }
     }
@@ -133,9 +130,9 @@ public class Game extends AppCompatActivity {
                         public void onClick(DialogInterface dialog, int id){
                             startActivity(intent);
                         }
-                    });
-
-            lostBuild.show();
+                    })
+            .setCancelable(false)
+            .show();
         }
     }
 }
