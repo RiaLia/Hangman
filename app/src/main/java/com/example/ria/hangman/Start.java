@@ -54,8 +54,8 @@ public class Start extends AppCompatActivity{
         startActivity(intent );
     }
 
-  /*  public void scoreClicked(View view){
-        Intent intent = new Intent(this, Category.class);
+    public void scoreClicked(View view){
+        Intent intent = new Intent(this, ScoreBoard.class);
         startActivity(intent);
-    }   Det Finns i nuläget ingen scoreActivity. Skapa Den!  */
+    }
 }

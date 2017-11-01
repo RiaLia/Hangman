@@ -84,6 +84,7 @@ public class Game extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if( item.getItemId() == R.id.Home){
             Intent intent = new Intent(this, Start.class);
+            intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP | FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             return true;
         }

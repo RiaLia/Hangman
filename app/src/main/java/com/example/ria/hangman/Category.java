@@ -1,6 +1,8 @@
 package com.example.ria.hangman;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +11,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
+import static android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP;
 
 public class Category extends AppCompatActivity {
 
@@ -27,21 +32,23 @@ public class Category extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.toolbar, menu);
+        getMenuInflater().inflate(R.menu.toolbar_game, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if( item.getItemId() == R.id.Info){
+        if( item.getItemId() == R.id.Rules){
             Intent intent = new Intent(this, About.class);
             startActivity(intent);
             return true;
         }
-        else if (item.getItemId() == R.id.Play){
-            Intent intentPlay = new Intent(this, Category.class);
-            startActivity(intentPlay);
+        else if( item.getItemId() == R.id.Home){
+            Intent intent = new Intent(this, Start.class);
+            intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP | FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
             return true;
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -55,23 +62,6 @@ public class Category extends AppCompatActivity {
         intent.putExtra("Word", mysteryWord);
         startActivity(intent);
     }
-
-        // Skapa en ny metod som hämtar hem,  och skapar en String[][]
-        /*        Resources res = getResources();
-                    TypedArray ta = res.obtainTypedArray(R.array.array0);
-                    int n = ta.length();
-                    String[][] array = new String[n][];
-                    for (int i = 0; i < n; ++i) {
-                        int id = ta.getResourceId(i, 0);
-                        if (id > 0) {
-                            array[i] = res.getStringArray(id);
-                        } else {
-                            // something wrong with the XML
-                        }
-                    }
-                    ta.recycle(); // Important!
-                        }
-                */
 
     public void animalClicked(View view) {
         Intent intent = new Intent(this, Game.class);
@@ -122,4 +112,21 @@ public class Category extends AppCompatActivity {
         intent.putExtra("Word", mysteryWord);
         startActivity(intent);
     }
+
+    public void getRandomWord(){
+
+        // Skapa en ny metod som hämtar hem,  och skapar en String[][]
+                Resources res = getResources();
+                    TypedArray random = res.obtainTypedArray(R.array.Random);
+                    int n = random.length();
+                    String[][] array = new String[n][];
+                    for (int i = 0; i < n; ++i) {
+                        int id = random.getResourceId(i, 0);
+                        if (id > 0) {
+                            array[i] = res.getStringArray(id);
+                        } 
+                    }
+                    random.recycle(); // Important!
+                        }
+
 }
