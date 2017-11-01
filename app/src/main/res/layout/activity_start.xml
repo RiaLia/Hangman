@@ -56,8 +56,8 @@ tools:context="com.example.ria.hangman.Start">
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@android:drawable/stat_notify_chat"
-        android:layout_marginLeft="34dp"
-        android:layout_marginStart="34dp"/>
+        android:layout_marginStart="34dp"
+        android:contentDescription="@string/Score" />
 
     <ImageButton
         android:id="@+id/aboutButton"
@@ -65,9 +65,7 @@ tools:context="com.example.ria.hangman.Start">
         android:layout_width="171dp"
         android:layout_height="51dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginRight="34dp"
         android:layout_marginEnd="34dp"
         android:layout_marginTop="0dp"
         android:onClick="aboutClicked"
@@ -76,7 +74,8 @@ tools:context="com.example.ria.hangman.Start">
         app:layout_constraintLeft_toRightOf="@+id/scoreButton"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scoreButton"
-        app:srcCompat="@android:drawable/ic_menu_help" />
+        app:srcCompat="@android:drawable/ic_menu_help"
+        android:contentDescription="@string/About" />
 
 
 </android.support.constraint.ConstraintLayout>

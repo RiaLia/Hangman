@@ -6,6 +6,7 @@ package com.example.ria.hangman;
 
 public class Player {
     private String name;
+    private int score;
 
 
     public String getName() {
@@ -14,5 +15,13 @@ public class Player {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getScore(){
+        return score;
+    }
+
+    public void setScore(int score){
+        this.score = score;
     }
 }

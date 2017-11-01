@@ -44,4 +44,7 @@
     <string name="Encyklopedia">Encyklopedia</string>
     <string name="food"><![CDATA[Food & Drinks]]></string>
     <string name="Name">"NAME: "</string>
+    <string name="Score">SCORE:</string>
+    <string name="Star1">Star1</string>
+    <string name="Star2">Star2</string>
 </resources>

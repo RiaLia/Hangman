@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
+import static android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP;
+
 
 public class Game extends AppCompatActivity {
     private String currWord;
@@ -22,7 +25,6 @@ public class Game extends AppCompatActivity {
     private int numParts = 6;
 
     private TextView showWord;
-
     private TextView textView;
     private TextView textView2;
 
@@ -42,6 +44,8 @@ public class Game extends AppCompatActivity {
         textView2.setText(text2);
 
         currWord = intent.getStringExtra("Word");
+
+
 
         bodyParts = new ImageView[numParts];
         bodyParts[0] = (ImageView) findViewById(R.id.head);
@@ -90,10 +94,10 @@ public class Game extends AppCompatActivity {
         for ( int i = 0; i < String.valueOf(asterisk).length(); i++ ){
             if (! String.valueOf(asterisk).contains("*")){
 
+
                 final Intent intent = new Intent(this , Category.class);
                 final Intent intentStart = new Intent(this, Start.class);
                 AlertDialog.Builder winBuild = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AlertDialogCustom));
-
                 winBuild.setTitle("YOU WON!!!").setMessage("You correctly guessed the word in: " +count+ " tries!! ")
                 .setPositiveButton("Next Word", new DialogInterface.OnClickListener(){
                             public void onClick(DialogInterface dialog, int id){
@@ -103,10 +107,11 @@ public class Game extends AppCompatActivity {
                 .setNegativeButton("Exit",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                intentStart.setFlags(FLAG_ACTIVITY_SINGLE_TOP | FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intentStart);
                                 Game.this.finish();
                             }})
-                        .setCancelable(false)
+                .setCancelable(false)
                 .show();
             }
         }
@@ -128,6 +133,7 @@ public class Game extends AppCompatActivity {
             lostBuild.setTitle("GAME OVER").setMessage("THE CORRECT WORD WAS: "+currWord)
             .setPositiveButton("Main Menu", new DialogInterface.OnClickListener(){
                         public void onClick(DialogInterface dialog, int id){
+                            intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP | FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                         }
                     })
