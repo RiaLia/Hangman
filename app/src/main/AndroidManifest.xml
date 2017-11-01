@@ -19,14 +19,17 @@
         <activity
             android:name=".Game"
             android:parentActivityName=".Start"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
         <activity android:name=".About"
             android:parentActivityName=".Start"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
         <activity
             android:name=".Category"
             android:parentActivityName=".Start"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
     </application>
 
 </manifest>

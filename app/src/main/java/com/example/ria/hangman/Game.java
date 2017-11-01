@@ -2,10 +2,14 @@ package com.example.ria.hangman;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.ContextThemeWrapper;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,6 +31,7 @@ public class Game extends AppCompatActivity {
     private TextView showWord;
     private TextView textView;
     private TextView textView2;
+    private Toolbar myToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +49,9 @@ public class Game extends AppCompatActivity {
         textView2.setText(text2);
 
         currWord = intent.getStringExtra("Word");
+        myToolbar = (Toolbar)findViewById(R.id.my_toolbar);
+        myToolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(myToolbar);
 
 
 
@@ -64,6 +72,33 @@ public class Game extends AppCompatActivity {
         }
         showWord.setText(String.valueOf(asterisk));
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_game, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if( item.getItemId() == R.id.Home){
+            Intent intent = new Intent(this, Start.class);
+            startActivity(intent);
+            return true;
+        }
+        else if (item.getItemId() == R.id.Rules){
+            AlertDialog.Builder rulesBuild = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AlertDialogCustom));
+            rulesBuild.setTitle("RULES:").setMessage("You have 7 tries to guees the hidden word.")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener(){
+                        public void onClick(DialogInterface dialog, int id){
+
+                        }
+                    }).show();
+
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void clickedButton(View view){
