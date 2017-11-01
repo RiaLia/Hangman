@@ -1,8 +1,6 @@
 package com.example.ria.hangman;
 
 import android.content.Intent;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -57,6 +55,19 @@ public class Category extends AppCompatActivity {
         Intent intent = new Intent(this, Game.class);
         intent.putExtra("Message", editText.getText().toString());
         intent.putExtra("Key", "Random");
+
+      /*  Resources res = getResources();
+        TypedArray random = res.obtainTypedArray(R.array.Random);
+        int n = random.length();
+        String[][] array = new String[n][];
+        for (int i = 0; i < n; ++i) {
+            int id = random.getResourceId(i, 0);
+            if (id > 0) {
+                array[i] = res.getStringArray(id);
+            }
+        }
+        random.recycle(); // Important!    */
+
         String[] random = getResources().getStringArray(R.array.Random);
         String mysteryWord = random[(int) (Math.random() * random.length)];
         intent.putExtra("Word", mysteryWord);
@@ -113,7 +124,7 @@ public class Category extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void getRandomWord(){
+  /*  public void getRandomWord(){
 
         // Skapa en ny metod som hämtar hem,  och skapar en String[][]
                 Resources res = getResources();
@@ -124,9 +135,9 @@ public class Category extends AppCompatActivity {
                         int id = random.getResourceId(i, 0);
                         if (id > 0) {
                             array[i] = res.getStringArray(id);
-                        } 
+                        }
                     }
                     random.recycle(); // Important!
                         }
-
+*/
 }

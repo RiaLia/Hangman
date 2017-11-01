@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="Random">
-
-        <!-- <item>@array/Animal</item>  // För att kunna hämta hela array:n med Animal's  -->
         <item>ELEPHANT</item>
         <item>PORKYPINE</item>
         <item>GIRAFF</item>
