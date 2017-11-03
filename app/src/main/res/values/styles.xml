@@ -17,15 +17,17 @@
     </style>
 
     <style name="Catbutton">
-        <item name="android:layout_width">350dp</item>
-        <item name="android:layout_height">51dp</item>
+        <item name="android:layout_width">322dp</item>
+        <item name="android:layout_height">50dp</item>
         <item name="android:layout_centerInParent">true</item>
-        <item name="android:layout_marginEnd">32dp</item>
-        <item name="android:layout_marginStart">34dp</item>
+        <item name="android:layout_marginEnd">0dp</item>
+        <item name="android:layout_marginStart">0dp</item>
         <item name="android:layout_marginTop">12dp</item>
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:textColor">#FFFFFFFF</item>
     </style>
+
+
 
 
 

@@ -23,10 +23,10 @@ public class Game extends AppCompatActivity {
     private char[] asterisk;
 
     private int count = 0;
-    private int tries = 7;
+    private int tries = 9;
 
     private ImageView[] bodyParts;
-    private int numParts = 6;
+    private int numParts = 9;
 
     private TextView showWord;
     private TextView textView;
@@ -56,12 +56,15 @@ public class Game extends AppCompatActivity {
 
 
         bodyParts = new ImageView[numParts];
-        bodyParts[0] = (ImageView) findViewById(R.id.head);
-        bodyParts[1] = (ImageView) findViewById(R.id.body);
-        bodyParts[2] = (ImageView) findViewById(R.id.arm1);
-        bodyParts[3] = (ImageView) findViewById(R.id.arm2);
-        bodyParts[4] = (ImageView) findViewById(R.id.leg1);
-        bodyParts[5] = (ImageView) findViewById(R.id.leg2);
+        bodyParts[0] = (ImageView) findViewById(R.id.loose);
+        bodyParts[1] = (ImageView) findViewById(R.id.stool);
+        bodyParts[2] = (ImageView) findViewById(R.id.head);
+        bodyParts[3] = (ImageView) findViewById(R.id.body);
+        bodyParts[4] = (ImageView) findViewById(R.id.arm1);
+        bodyParts[5] = (ImageView) findViewById(R.id.arm2);
+        bodyParts[6] = (ImageView) findViewById(R.id.leg1);
+        bodyParts[7] = (ImageView) findViewById(R.id.leg2);
+        bodyParts[8] = (ImageView) findViewById(R.id.stool_fallen);
 
 
         showWord = (TextView) findViewById(R.id.showWord);
@@ -158,10 +161,15 @@ public class Game extends AppCompatActivity {
 
         if (count == 1){bodyParts[0].setVisibility(View.VISIBLE);}
         if (count == 2){bodyParts[1].setVisibility(View.VISIBLE);}
-        if (count == 3){bodyParts[2].setVisibility(View.VISIBLE);}
+        if (count == 3){bodyParts[2].setVisibility(View.VISIBLE);
+                      bodyParts[0].setVisibility(View.INVISIBLE);}
         if (count == 4){bodyParts[3].setVisibility(View.VISIBLE);}
         if (count == 5){bodyParts[4].setVisibility(View.VISIBLE);}
         if (count == 6){bodyParts[5].setVisibility(View.VISIBLE);}
+        if (count == 7){bodyParts[6].setVisibility(View.VISIBLE);}
+        if (count == 8){bodyParts[7].setVisibility(View.VISIBLE);}
+        if (count == 9){bodyParts[8].setVisibility(View.VISIBLE);
+                      bodyParts[1].setVisibility(View.INVISIBLE);}
 
         if (count == tries){
             final Intent intent = new Intent(this , Start.class);

@@ -9,18 +9,14 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="56dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
         android:background="?attr/colorPrimary"
-        android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="0dp"
         app:layout_constraintHorizontal_bias="0.0" />
 
     <EditText
@@ -47,7 +43,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="22dp"
         android:fontFamily="monospace"
         android:text="@string/category"
         android:textAlignment="center"
@@ -55,14 +51,17 @@
         android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintHorizontal_bias="0.444" />
 
     <Button
         android:id="@+id/randomButton"
         style="@style/Catbutton"
+        android:layout_width="322dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
         android:onClick="randomClicked"
         android:text="@string/Random"
-        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -70,50 +69,61 @@
     <Button
         android:id="@+id/animalsButton"
         style="@style/Catbutton"
+        android:layout_width="322dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
         android:onClick="animalClicked"
         android:text="@string/Animals"
-        app:layout_constraintHorizontal_bias="0.285"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/randomButton"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/randomButton" />
 
     <Button
         android:id="@+id/countriesButton"
         style="@style/Catbutton"
+        android:layout_width="322dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
         android:onClick="countriesClicked"
         android:text="@string/Countries"
-        app:layout_constraintHorizontal_bias="0.285"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/animalsButton"
         app:layout_constraintTop_toBottomOf="@+id/animalsButton" />
 
     <Button
         android:id="@+id/vehiclesButton"
         style="@style/Catbutton"
+        android:layout_width="322dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
         android:onClick="vehiclesClicked"
         android:text="@string/Vehicles"
-        app:layout_constraintHorizontal_bias="0.285"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/animalsButton"
         app:layout_constraintTop_toBottomOf="@+id/countriesButton" />
 
     <Button
         android:id="@+id/enzoButton"
         style="@style/Catbutton"
+        android:layout_width="322dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="13dp"
         android:onClick="enzoClicked"
         android:text="@string/Encyklopedia"
-        app:layout_constraintHorizontal_bias="0.285"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/vehiclesButton"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vehiclesButton" />
 
     <Button
         android:id="@+id/foodButton"
         style="@style/Catbutton"
+        android:layout_width="322dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
         android:onClick="foodClicked"
         android:text="@string/food"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/enzoButton"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enzoButton" />
 
