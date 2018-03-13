@@ -88,4 +88,16 @@
         <item>HAMBURGER</item>
     </string-array>
 
+    <array name="pictures">
+        <item>@drawable/loose_start</item>
+        <item>@drawable/stool</item>
+        <item>@drawable/head</item>
+        <item>@drawable/body</item>
+        <item>@drawable/arm1</item>
+        <item>@drawable/arm2</item>
+        <item>@drawable/leg1</item>
+        <item>@drawable/leg2</item>
+        <item>@drawable/stool_fallen</item>
+    </array>
+
 </resources>

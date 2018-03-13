@@ -52,8 +52,13 @@ public class Game extends AppCompatActivity {
         myToolbar = (Toolbar)findViewById(R.id.my_toolbar);
         myToolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(myToolbar);
+        showWord = (TextView) findViewById(R.id.showWord);
 
-
+        asterisk = new char[currWord.length()];
+        for (int s = 0; s < currWord.length(); s++) {
+            asterisk[s] = '*';
+        }
+        showWord.setText(String.valueOf(asterisk));
 
         bodyParts = new ImageView[numParts];
         bodyParts[0] = (ImageView) findViewById(R.id.loose);
@@ -66,22 +71,23 @@ public class Game extends AppCompatActivity {
         bodyParts[7] = (ImageView) findViewById(R.id.leg2);
         bodyParts[8] = (ImageView) findViewById(R.id.stool_fallen);
 
-
-        showWord = (TextView) findViewById(R.id.showWord);
-
-        asterisk = new char[currWord.length()];
-        for (int s = 0; s < currWord.length(); s++) {
-            asterisk[s] = '*';
-        }
-        showWord.setText(String.valueOf(asterisk));
-
     }
 
+    /**
+     *
+     * @param menu Creates a new toolbar, with custom layout.
+     * @return a boolean for visible/invisible.
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_game, menu);
         return true;
     }
+
+    /**
+     * @param item Onclick Listener for the buttons in the toolbar, and funcions for when clicked.
+     * @return a boolean for active/inactive.
+     */
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -93,18 +99,20 @@ public class Game extends AppCompatActivity {
         }
         else if (item.getItemId() == R.id.Rules){
             AlertDialog.Builder rulesBuild = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.AlertDialogCustom));
-            rulesBuild.setTitle("RULES:").setMessage("You have 7 tries to guees the hidden word.")
+            rulesBuild.setTitle("RULES:").setMessage("You have 9 tries to guees the hidden word.")
                     .setPositiveButton("OK", new DialogInterface.OnClickListener(){
-                        public void onClick(DialogInterface dialog, int id){
-
-                        }
+                        public void onClick(DialogInterface dialog, int id){}
                     }).show();
-
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     *
+     * @param view Onclick Listener for the Letter-buttons. Saves the value of the button clicked
+     *             to "guess". And disablses the button.
+     */
     public void clickedButton(View view){
         String guess = ((TextView)view).getText().toString();
         view.setEnabled(false);
@@ -112,7 +120,7 @@ public class Game extends AppCompatActivity {
         hang(guess);
     }
 
-    public void hang(String guess) {
+    private void hang(String guess) {
     boolean correct = false;
         for (int i = 0; i < currWord.length(); i++) {
             if(currWord.charAt(i) == guess.charAt(0)) {
@@ -123,13 +131,12 @@ public class Game extends AppCompatActivity {
             }
         }
         if (!correct){
-            count ++;
             hangmanImage();
         }
 
     }
 
-    public void win(){
+    private void win(){
         for ( int i = 0; i < String.valueOf(asterisk).length(); i++ ){
             if (! String.valueOf(asterisk).contains("*")){
 
@@ -157,19 +164,12 @@ public class Game extends AppCompatActivity {
     }
 
     private void hangmanImage() {
-        // BÖR MINIMERAS
+        bodyParts[count].setVisibility(View.VISIBLE);
+        count++;
 
-        if (count == 1){bodyParts[0].setVisibility(View.VISIBLE);}
-        if (count == 2){bodyParts[1].setVisibility(View.VISIBLE);}
-        if (count == 3){bodyParts[2].setVisibility(View.VISIBLE);
-                      bodyParts[0].setVisibility(View.INVISIBLE);}
-        if (count == 4){bodyParts[3].setVisibility(View.VISIBLE);}
-        if (count == 5){bodyParts[4].setVisibility(View.VISIBLE);}
-        if (count == 6){bodyParts[5].setVisibility(View.VISIBLE);}
-        if (count == 7){bodyParts[6].setVisibility(View.VISIBLE);}
-        if (count == 8){bodyParts[7].setVisibility(View.VISIBLE);}
-        if (count == 9){bodyParts[8].setVisibility(View.VISIBLE);
-                      bodyParts[1].setVisibility(View.INVISIBLE);}
+        if (count == 3){bodyParts[0].setVisibility(View.INVISIBLE);}
+
+        if (count == 9){bodyParts[1].setVisibility(View.INVISIBLE);}
 
         if (count == tries){
             final Intent intent = new Intent(this , Start.class);

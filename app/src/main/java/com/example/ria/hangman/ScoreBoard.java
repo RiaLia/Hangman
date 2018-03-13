@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
 import static android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP;
@@ -14,6 +15,7 @@ import static android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP;
 public class ScoreBoard extends AppCompatActivity {
 
     private Toolbar myToolbar;
+    ListView myList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +24,26 @@ public class ScoreBoard extends AppCompatActivity {
         myToolbar = (Toolbar)findViewById(R.id.my_toolbar);
         myToolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(myToolbar);
+        myList = findViewById(R.id.highScoreList);
+        setAdapter();
     }
+
+    /**
+     *
+     * @param menu Creates a new toolbar, with custom layout.
+     * @return a boolean for visible/invisible.
+     */
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_game, menu);
         return true;
     }
+
+    /**
+     * @param item Onclick Listener for the buttons in the toolbar, and funcions for when clicked.
+     * @return a boolean for active/inactive.
+     */
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -45,5 +60,11 @@ public class ScoreBoard extends AppCompatActivity {
 
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void setAdapter(){
+        HighScoreAdapter highscoreAdapter = new HighScoreAdapter(this);
+        myList.setAdapter(highscoreAdapter);
+
     }
 }

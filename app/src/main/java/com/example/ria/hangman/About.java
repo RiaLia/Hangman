@@ -24,11 +24,23 @@ public class About extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
     }
+
+    /**
+     *
+     * @param menu Creates a new toolbar, with custom layout.
+     * @return a boolean for visible/invisible.
+     */
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_about, menu);
         return true;
     }
+
+    /**
+     * @param item Onclick Listener for the buttons in the toolbar, and funcions for when clicked.
+     * @return a boolean for active/inactive.
+     */
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

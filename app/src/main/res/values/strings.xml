@@ -48,4 +48,8 @@
     <string name="Star1">Star1</string>
     <string name="Star2">Star2</string>
     <string name="Highscore">HIGHSCORE:</string>
+    <string name="title_activity_test">Test</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

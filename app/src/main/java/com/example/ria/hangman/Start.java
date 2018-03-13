@@ -22,11 +22,22 @@ public class Start extends AppCompatActivity{
         setSupportActionBar(myToolbar);
     }
 
+    /**
+     *
+     * @param menu Creates a new toolbar, with custom layout.
+     * @return a boolean for visible/invisible.
+     */
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar, menu);
         return true;
     }
+
+    /**
+     * @param item Onclick Listener for the buttons in the toolbar, and funcions for when clicked.
+     * @return a boolean for active/inactive.
+     */
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -43,16 +54,30 @@ public class Start extends AppCompatActivity{
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     *
+     * @param view Onclicked Listener for when play-button is clicked, start the Category-class.
+     */
+
     public void playClicked(View view){
         Intent intent = new Intent(this, Category.class);
         startActivity(intent);
 
     }
+    /**
+     *
+     * @param view Onclicked Listener for when about-button is clicked, start the About-class.
+     */
 
     public void aboutClicked(View view){
         Intent intent = new Intent(this, About.class);
         startActivity(intent );
     }
+
+    /**
+     *
+     * @param view Onclicked Listener for when score-button is clicked, start the ScoreBoard-class.
+     */
 
     public void scoreClicked(View view){
         Intent intent = new Intent(this, ScoreBoard.class);

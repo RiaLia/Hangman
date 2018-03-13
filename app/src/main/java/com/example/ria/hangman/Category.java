@@ -27,12 +27,22 @@ public class Category extends AppCompatActivity {
         myToolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(myToolbar);
     }
+    /**
+     *
+     * @param menu Creates a new toolbar, with custom layout.
+     * @return a boolean for visible/invisible.
+     */
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_game, menu);
         return true;
     }
+
+    /**
+     * @param item Onclick Listener for the buttons in the toolbar, and funcions for when clicked.
+     * @return a boolean for active/inactive.
+     */
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -51,28 +61,26 @@ public class Category extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * @param view OnClick Listener for the category Random. Collects the right array with words.
+     *             and uses a random to pick one, and sends this mysterWord into the game-class using a key-value on the intent.
+     *             Also collects the name the player entered, and sends in into the game.
+     */
+
     public void randomClicked(View view) {
         Intent intent = new Intent(this, Game.class);
         intent.putExtra("Message", editText.getText().toString());
         intent.putExtra("Key", "Random");
-
-      /*  Resources res = getResources();
-        TypedArray random = res.obtainTypedArray(R.array.Random);
-        int n = random.length();
-        String[][] array = new String[n][];
-        for (int i = 0; i < n; ++i) {
-            int id = random.getResourceId(i, 0);
-            if (id > 0) {
-                array[i] = res.getStringArray(id);
-            }
-        }
-        random.recycle(); // Important!    */
-
         String[] random = getResources().getStringArray(R.array.Random);
         String mysteryWord = random[(int) (Math.random() * random.length)];
         intent.putExtra("Word", mysteryWord);
         startActivity(intent);
     }
+    /**
+     * @param view OnClick Listener for the category Animal. Collects the right array with words.
+     *             and uses a random to pick one, and sends this mysterWord into the game-class using a key-value on the intent.
+     *             Also collects the name the player entered, and sends in into the game.
+     */
 
     public void animalClicked(View view) {
         Intent intent = new Intent(this, Game.class);
@@ -83,6 +91,11 @@ public class Category extends AppCompatActivity {
         intent.putExtra("Word", mysteryWord);
         startActivity(intent);
     }
+    /**
+     * @param view OnClick Listener for the category Countries. Collects the right array with words.
+     *             and uses a random to pick one, and sends this mysterWord into the game-class using a key-value on the intent.
+     *             Also collects the name the player entered, and sends in into the game.
+     */
 
     public void countriesClicked(View view) {
         Intent intent = new Intent(this, Game.class);
@@ -94,6 +107,12 @@ public class Category extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * @param view OnClick Listener for the category Vehicles. Collects the right array with words.
+     *             and uses a random to pick one, and sends this mysterWord into the game-class using a key-value on the intent.
+     *             Also collects the name the player entered, and sends in into the game.
+     */
+
     public void vehiclesClicked(View view) {
         Intent intent = new Intent(this, Game.class);
         intent.putExtra("Message", editText.getText().toString());
@@ -103,6 +122,11 @@ public class Category extends AppCompatActivity {
         intent.putExtra("Word", mysteryWord);
         startActivity(intent);
     }
+    /**
+     * @param view OnClick Listener for the category Encyklodpedia. Collects the right array with words.
+     *             and uses a random to pick one, and sends this mysterWord into the game-class using a key-value on the intent.
+     *             Also collects the name the player entered, and sends in into the game.
+     */
 
     public void enzoClicked(View view) {
         Intent intent = new Intent(this, Game.class);
@@ -114,6 +138,12 @@ public class Category extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * @param view OnClick Listener for the category Food & Drinks. Collects the right array with words.
+     *             and uses a random to pick one, and sends this mysterWord into the game-class using a key-value on the intent.
+     *             Also collects the name the player entered, and sends in into the game.
+     */
+
     public void foodClicked(View view) {
         Intent intent = new Intent(this, Game.class);
         intent.putExtra("Message", editText.getText().toString());
@@ -123,21 +153,4 @@ public class Category extends AppCompatActivity {
         intent.putExtra("Word", mysteryWord);
         startActivity(intent);
     }
-
-  /*  public void getRandomWord(){
-
-        // Skapa en ny metod som hämtar hem,  och skapar en String[][]
-                Resources res = getResources();
-                    TypedArray random = res.obtainTypedArray(R.array.Random);
-                    int n = random.length();
-                    String[][] array = new String[n][];
-                    for (int i = 0; i < n; ++i) {
-                        int id = random.getResourceId(i, 0);
-                        if (id > 0) {
-                            array[i] = res.getStringArray(id);
-                        }
-                    }
-                    random.recycle(); // Important!
-                        }
-*/
 }
